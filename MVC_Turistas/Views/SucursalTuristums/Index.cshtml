@@ -1,0 +1,41 @@
+﻿@model IEnumerable<MVC_Turistas.Models.SucursalTuristum>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CodigoSucursalNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodigoTuristaNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodigoSucursalNavigation.CodigoSucursal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodigoTuristaNavigation.CodigoTurista)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CodigoSucursalTurista">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CodigoSucursalTurista">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CodigoSucursalTurista">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

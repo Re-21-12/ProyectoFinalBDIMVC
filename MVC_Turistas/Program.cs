@@ -1,7 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using MVC_Turistas.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Registrar el ModelContext en el contenedor de servicios
+builder.Services.AddDbContext<ModelContext>(options =>
+    options.UseOracle(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
