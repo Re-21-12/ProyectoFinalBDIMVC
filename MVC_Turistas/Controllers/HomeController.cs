@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using MVC_Turistas.Models;
 using System.Diagnostics;
+using MVC_Turistas.Models;
 
 namespace MVC_Turistas.Controllers
 {
@@ -22,11 +22,14 @@ namespace MVC_Turistas.Controllers
         {
             return View();
         }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public IActionResult Error(string errorMessage)
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            var errorViewModel = new ErrorViewModel
+            {
+                RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier,
+                ErrorMessage = errorMessage
+            };
+            return View(errorViewModel);
         }
     }
 }

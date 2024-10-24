@@ -1,0 +1,24 @@
+﻿@model MVC_Turistas.Models.CorreoElectronico
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalle</h1>
+
+<div>
+    <h4>CorreoElectronico</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CodigoTuristaNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CodigoTuristaNavigation.CodigoTurista)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" class="btn-edit"  asp-route-id="@Model?.CorreoElectronico1">Editar</a> |
+    <a asp-action="Index" class="btn btn-dark" type="button" >Regresar</a>
+</div>

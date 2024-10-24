@@ -1,0 +1,35 @@
+﻿@model IEnumerable<MVC_Turistas.Models.Telefono>
+
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<h1>Inicio</h1>
+
+<p>
+    <a asp-action="Create" class="btn">Crear Nuevo</a>
+</p>
+<table class="table table-hover border-warning table-borderless">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CodigoTuristaNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodigoTuristaNavigation.CodigoTurista)
+            </td>
+            <td>
+                <a asp-action="Edit" class="btn-edit"  asp-route-id="@item.NumeroTelefono">Editar</a> |
+                <a asp-action="Details" class="btn-detail"  asp-route-id="@item.NumeroTelefono">Detalle</a> |
+                <a asp-action="Delete" class="btn-delete" asp-route-id="@item.NumeroTelefono">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,65 @@
+﻿@model IEnumerable<MVC_Turistas.Models.Vuelo>
+
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<h1>Inicio</h1>
+
+<p>
+    <a asp-action="Create" class="btn">Crear Nuevo</a>
+</p>
+<table class="table table-hover border-warning table-borderless">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hora)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Origen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Destino)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PlazaTotales)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PlazaTuristaDisponible)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Origen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Destino)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlazaTotales)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlazaTuristaDisponible)
+            </td>
+            <td>
+                <a asp-action="Edit" class="btn-edit"  asp-route-id="@item.NumeroVuelo">Editar</a> |
+                <a asp-action="Details" class="btn-detail"  asp-route-id="@item.NumeroVuelo">Detalle</a> |
+                <a asp-action="Delete" class="btn-delete" asp-route-id="@item.NumeroVuelo">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
