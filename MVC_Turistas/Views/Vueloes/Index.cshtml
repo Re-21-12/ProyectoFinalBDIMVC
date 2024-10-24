@@ -1,15 +1,15 @@
 ﻿@model IEnumerable<MVC_Turistas.Models.Vuelo>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Inicio";
 }
 
-<h1>Index</h1>
+<h1>Inicio</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn">Crear Nuevo</a>
 </p>
-<table class="table">
+<table class="table table-hover border-warning table-borderless">
     <thead>
         <tr>
             <th>
@@ -55,9 +55,9 @@
                 @Html.DisplayFor(modelItem => item.PlazaTuristaDisponible)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.NumeroVuelo">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.NumeroVuelo">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.NumeroVuelo">Delete</a>
+                <a asp-action="Edit" class="btn-edit"  asp-route-id="@item.NumeroVuelo">Editar</a> |
+                <a asp-action="Details" class="btn-detail"  asp-route-id="@item.NumeroVuelo">Detalle</a> |
+                <a asp-action="Delete" class="btn-delete" asp-route-id="@item.NumeroVuelo">Eliminar</a>
             </td>
         </tr>
 }

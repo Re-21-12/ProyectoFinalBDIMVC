@@ -4,70 +4,116 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - MVC_Turistas</title>
+
+    <!-- Bootstrap Icons CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/MVC_Turistas.styles.css" asp-append-version="true" />
+    <head>
+        <link rel="stylesheet" href="~/css/site.css" />
+    </head>
+
+
+    <style>
+        /* Sidebar Styles */
+        body {
+            margin: 0;
+            font-family: 'Fira Code';
+        }
+    
+        .sidebar {
+            font-style: italic;
+            height: 100vh;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: linear-gradient(180deg, #00DAD2, #71EDAB, #F9F871); /* Gradiente */
+            padding-top: 20px;
+            transition: width 0.3s;
+        }
+
+            .sidebar a {
+                padding: 15px 10px;
+                font-size: 1.2rem;
+                display: flex;
+                align-items: center;
+                color: white;
+                text-decoration: none;
+                transition: background 0.3s ease, color 0.3s ease;
+            }
+
+                .sidebar a:hover {
+                    background-color: #43E4C1;
+                    color: #000;
+                }
+
+                .sidebar a.active {
+                    background-color: #9EF394;
+                    color: white;
+                }
+
+                .sidebar a i {
+                    margin-right: 10px; /* Espacio entre ícono y texto */
+                }
+
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MVC_Turistas</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Hotels" asp-action="Index">Hoteles</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="HotelTuristums" asp-action="Index">Tusitas en Hoteles</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Sucursals" asp-action="Index">Sucursales</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="SucursalTuristums" asp-action="Index">Turistas en Sucursal</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Vueloes" asp-action="Index">Vuelos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="VueloTuristums" asp-action="Index">Turistas en Vuelos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Telefonoes" asp-action="Index">Telefonos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Turistums" asp-action="Index">Turistas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="CorreoElectronicoes" asp-action="Index">Correos</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
+    <div class="sidebar">
+        <a class="active" asp-area="" asp-controller="Home" asp-action="Index">
+            <i class="bi bi-house-fill"></i> Inicio
+        </a>
+        <a asp-area="" asp-controller="Hotels" asp-action="Index">
+            <i class="bi bi-building"></i> Hoteles
+        </a>
+        <a asp-area="" asp-controller="HotelTuristums" asp-action="Index">
+            <i class="bi bi-people-fill"></i> Turistas en Hoteles
+        </a>
+        <a asp-area="" asp-controller="Sucursals" asp-action="Index">
+            <i class="bi bi-shop"></i> Sucursales
+        </a>
+        <a asp-area="" asp-controller="SucursalTuristums" asp-action="Index">
+            <i class="bi bi-geo-alt-fill"></i> Turistas en Sucursal
+        </a>
+        <a asp-area="" asp-controller="Vueloes" asp-action="Index">
+            <i class="bi bi-airplane"></i> Vuelos
+        </a>
+        <a asp-area="" asp-controller="VueloTuristums" asp-action="Index">
+            <i class="bi bi-passport"></i> Turistas en Vuelos
+        </a>
+        <a asp-area="" asp-controller="Telefonoes" asp-action="Index">
+            <i class="bi bi-telephone-fill"></i> Teléfonos
+        </a>
+        <a asp-area="" asp-controller="Turistums" asp-action="Index">
+            <i class="bi bi-person-fill"></i> Turistas
+        </a>
+        <a asp-area="" asp-controller="CorreoElectronicoes" asp-action="Index">
+            <i class="bi bi-envelope-fill"></i> Correos
+        </a>
+    </div>
+
+    <div class="content">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - MVC_Turistas - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
+   
     </footer>
+
+    <!-- jQuery and Bootstrap Bundle (including Popper) -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

@@ -1,22 +1,138 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
+    font-family: 'Victor Mono', 'Fira Code';
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #00dad2; /* Cambiado a color de la paleta */
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-color: linear-gradient(white, lightsteelblue);
+    ;
+    color: #333;
 }
+
+/* Estilo para botones */
+.btn {
+    background-color: #cbf77f; /* Color del botón */
+    border: 1px solid #00dad2; /* Color del borde del botón */
+    color: black; /* Color del texto del botón */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno */
+    transition: background-color 0.3s, transform 0.3s; /* Transiciones suaves */
+    padding-right: 2.3rem;
+    margin-top: 1rem;
+  
+}
+
+    .btn:hover {
+        background-color: #71edab; /* Color de fondo en hover */
+        transform: translateY(-2px); /* Sutil elevación en hover */
+    }
+    .btn-dark {
+        background-color: #000000; /* Color del botón */
+        border: 1px solid white; /* Color del borde del botón */
+        color: white; /* Color del texto del botón */
+        border-radius: 5px; /* Bordes redondeados */
+        padding: 10px 20px; /* Espaciado interno */
+        transition: background-color 0.3s, transform 0.3s; /* Transiciones suaves */
+        margin-top: 1rem
+    }
+.btn-edit {
+    background-color: #9AE800; /* Color del botón */
+    border: 1px solid black; /* Color del borde del botón */
+    color: white; /* Color del texto del botón */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno */
+    transition: background-color 0.3s, transform 0.3s; /* Transiciones suaves */
+}
+    .btn-edit:hover {
+        background-color: #E0E800; /* Color de fondo en hover */
+        transform: translateY(-2px); /* Sutil elevación en hover */
+        color: white; /* Color del texto del botón */
+    }
+
+.btn-detail {
+    border-radius: 5px;
+    background-color: #e87900; /* Color del botón */
+    color: #ffcb00; /* Color del texto del botón */
+    padding: 10px 20px; /* Espaciado interno */
+    transition: background-color 0.3s, transform 0.3s; /* Transiciones suaves */
+}
+
+    .btn-detail:hover {
+        background-color: #e8b900; /* Color de fondo en hover */
+        transform: translateY(-2px); /* Sutil elevación en hover */
+        color: #ffcb00; 
+    }
+
+.btn-delete {
+    border-radius: 5px;
+    color: #000000; /* Color del texto del botón */
+    padding: 10px 20px; /* Espaciado interno */
+}
+
+    .btn-delete:hover {
+        color: black;
+    }
+
+.btn-dark:hover {
+    background-color: lightsteelblue; /* Color de fondo en hover */
+    transform: translateY(-2px); /* Sutil elevación en hover */
+}
+/* Estilo para enlaces de navegación */
+.nav-link {
+    color: #cbf77f; /* Color de los enlaces de navegación */
+    text-decoration: none; /* Quitar subrayado */
+    padding: 5px 10px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+}
+
+    .nav-link:hover {
+        color: #9ef394; /* Color en hover para los enlaces de navegación */
+        background-color: rgba(203, 247, 127, 0.2); /* Fondo sutil en hover */
+    }
+
+/* Estilo para enlaces comunes */
+a {
+    color: #43e4c1; /* Color de enlaces generales */
+    text-decoration: none; /* Quitar subrayado */
+    transition: color 0.3s, text-decoration 0.3s; /* Transiciones suaves */
+    font-weight:bold;
+}
+
+    a:hover {
+        color: #00dad2; /* Color en hover para enlaces generales */
+        text-decoration: underline; /* Subrayado en hover */
+    }
+
+/* Estilo para formularios */
+.form-control {
+    border: 1px solid #71edab; /* Color del borde de los formularios */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px; /* Espaciado interno */
+}
+
+    .form-control:focus {
+        border-color: #00dad2; /* Color del borde al enfocar */
+        box-shadow: 0 0 0 0.2rem rgba(0, 218, 210, 0.25); /* Sombra al enfocar */
+        outline: none; /* Quitar el contorno */
+    }
